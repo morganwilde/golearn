@@ -10,7 +10,7 @@ func main() {
         fmt.Println("7 is odd")
     }
 
-    if 8%4 == 0 {
+    if 8%4 == 0 { // Brackets are required!
         fmt.Println("8 is divisible by 4")
     }
 
