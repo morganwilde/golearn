@@ -28,4 +28,8 @@ func main() {
     fmt.Println("People:", c.showPeople())
     c.seatPeople(3)
     fmt.Println("People:", c.showPeople())
+
+    d := &c
+    d.seatPerson()
+    fmt.Println("People:", c.showPeople())
 }
