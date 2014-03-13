@@ -7,7 +7,7 @@ import "runtime"
 func f(from string) {
     var i int64 = 0
 
-    for i = 0; i < 40; i++ {
+    for i = 0; i < 52; i++ {
         fmt.Println(from, "fib(", i, "):", fib(i))
     }
 }
@@ -25,6 +25,7 @@ func fib(n int64) int {
 func main() {
 
     runtime.GOMAXPROCS(8)
+    fmt.Println("numcpus:", runtime.NumCPU())
     
     go f("|||")
 
