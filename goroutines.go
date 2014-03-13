@@ -7,7 +7,7 @@ import "runtime"
 func f(from string) {
     var i int64 = 0
 
-    for i = 0; i < 52; i++ {
+    for i = 0; i < 43; i++ {
         fmt.Println(from, "fib(", i, "):", fib(i))
     }
 }
@@ -30,6 +30,8 @@ func main() {
     go f("|||")
 
     go f("---")
+    go f("+++")
+    go f("...")
 
     go func(msg string) {
         fmt.Println(msg)
