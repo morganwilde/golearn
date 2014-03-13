@@ -1,6 +1,8 @@
 package main
 
 import "fmt"
+import "runtime"
+
 
 func f(from string) {
     var i int64 = 0
@@ -22,6 +24,8 @@ func fib(n int64) int {
 
 func main() {
 
+    runtime.GOMAXPROCS(8)
+    
     go f("|||")
 
     go f("---")
