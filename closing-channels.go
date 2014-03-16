@@ -1,16 +1,18 @@
 package main
 
 import "fmt"
+import "runtime"
 
 func main() {
+    runtime.GOMAXPROCS(8)
     jobs := make(chan int, 5)
     done := make(chan bool)
 
     go func() {
         for {
-            _, more := <-jobs
+            j, more := <-jobs
             if more {
-                fmt.Println("received job")
+                fmt.Println("received job", j)
             } else {
                 fmt.Println("received all jobs")
                 done <- true
